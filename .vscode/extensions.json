@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "csstools.postcss",
+    "vivaxy.vscode-conventional-commits"
+  ]
+}
