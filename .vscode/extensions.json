@@ -3,6 +3,7 @@
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
     "csstools.postcss",
-    "vivaxy.vscode-conventional-commits"
+    "vivaxy.vscode-conventional-commits",
+    "bradlc.vscode-tailwindcss"
   ]
 }

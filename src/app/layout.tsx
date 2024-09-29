@@ -1,18 +1,33 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
+import { cn } from '@/lib/utils';
+
 import './globals.css';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+const lineSeed = localFont({
+  src: [
+    {
+      path: './fonts/LINESeedJP_OTF_EB.woff',
+      weight: '800',
+      style: 'extrabold',
+    },
+    {
+      path: './fonts/LINESeedJP_OTF_Bd.woff',
+      weight: '700',
+      style: 'bold',
+    },
+    {
+      path: './fonts/LINESeedJP_OTF_Rg.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/LINESeedJP_OTF_Th.woff',
+      weight: '100',
+      style: 'thin',
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -27,9 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={cn([lineSeed.className, 'antialiased'])}>
         {children}
       </body>
     </html>
