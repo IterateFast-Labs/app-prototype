@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import MobileLayout from '@/components/layout/mobile-layout';
 import { cn } from '@/lib/utils';
+import { ClientSideProvider } from '@/providers/client';
 
 import { fontSans } from './fonts/config';
 import './globals.css';
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body
         className={cn([fontSans.className, 'min-h-svh antialiased bg-gray-50'])}
       >
-        <MobileLayout>{children}</MobileLayout>
+        <ClientSideProvider>
+          <MobileLayout>{children}</MobileLayout>
+        </ClientSideProvider>
       </body>
     </html>
   );
