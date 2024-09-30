@@ -1,34 +1,10 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 
+import MobileLayout from '@/components/layout/mobile-layout';
 import { cn } from '@/lib/utils';
 
+import { fontSans } from './fonts/config';
 import './globals.css';
-
-const lineSeed = localFont({
-  src: [
-    {
-      path: './fonts/LINESeedJP_OTF_EB.woff',
-      weight: '800',
-      style: 'extrabold',
-    },
-    {
-      path: './fonts/LINESeedJP_OTF_Bd.woff',
-      weight: '700',
-      style: 'bold',
-    },
-    {
-      path: './fonts/LINESeedJP_OTF_Rg.woff',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/LINESeedJP_OTF_Th.woff',
-      weight: '100',
-      style: 'thin',
-    },
-  ],
-});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -42,8 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn([lineSeed.className, 'antialiased'])}>
-        {children}
+      <body
+        className={cn([fontSans.className, 'min-h-svh antialiased bg-gray-50'])}
+      >
+        <MobileLayout>{children}</MobileLayout>
       </body>
     </html>
   );
