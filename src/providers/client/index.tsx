@@ -1,7 +1,8 @@
 'use client';
 
 import { ReactQueryProvider } from './react-query-provider';
-import { RecoilProvider } from './recoil';
+import { RecoilProvider } from './recoil-provider';
+import { ThirdWebClientProvider } from './thirdweb-client-provider';
 
 export function ClientSideProvider({
   children,
@@ -10,7 +11,9 @@ export function ClientSideProvider({
 }) {
   return (
     <ReactQueryProvider>
-      <RecoilProvider>{children}</RecoilProvider>
+      <RecoilProvider>
+        <ThirdWebClientProvider>{children}</ThirdWebClientProvider>
+      </RecoilProvider>
     </ReactQueryProvider>
   );
 }
