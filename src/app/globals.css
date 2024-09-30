@@ -12,4 +12,8 @@
   :root {
     --radius: 0.5rem;
   }
+
+  body {
+    overscroll-behavior-y: none;
+  }
 }
