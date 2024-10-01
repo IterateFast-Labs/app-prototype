@@ -5,7 +5,7 @@ import {
   ScreenActions,
   ScreenContainer,
 } from '@/components/layout/screen-layout';
-import { Button } from '@/components/ui/button';
+import { WalletLoginButton } from '@/features/auth/component/wallet-login-button';
 
 export default function Home() {
   const t = useTranslations();
@@ -28,9 +28,7 @@ export default function Home() {
         </div>
 
         <ScreenActions>
-          <Button size="lg" className="w-full">
-            <span className="font-bold">Connect Wallet</span>
-          </Button>
+          <WalletLoginButton />
         </ScreenActions>
       </ScreenContainer>
     </main>
