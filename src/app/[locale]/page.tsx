@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 
 import { ImageMarquee } from '@/components/image-marquee';
