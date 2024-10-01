@@ -56,7 +56,7 @@ export function WalletLoginButton() {
         return;
       }
 
-      const { value, message } = await createNonce({
+      const { message } = await createNonce({
         walletAddress: account.address as `0x${string}`,
       });
 
