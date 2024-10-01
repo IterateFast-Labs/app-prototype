@@ -10,7 +10,7 @@ export interface LoginBody {
 export async function login(payload: LoginBody) {
   const { data } = await client.patch<{
     accessToken: string;
-    isSignup: boolean;
+    isSignUp: boolean;
   }>('/auth/login', payload);
 
   return data;

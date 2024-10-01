@@ -70,7 +70,7 @@ export function WalletLoginButton() {
         message,
       });
 
-      const { accessToken } = await mutateAsync({
+      const { accessToken, isSignUp } = await mutateAsync({
         signature,
         walletAddress: account.address as `0x${string}`,
       });
@@ -81,7 +81,11 @@ export function WalletLoginButton() {
 
       setAccessToken(accessToken);
 
-      router.push(`/${locale}/dashboard`);
+      if (isSignUp) {
+        router.push(`/${locale}/profile-setup`);
+      } else {
+        router.push(`/${locale}/dashboard`);
+      }
     } catch (error) {
       // TODO: Handle error
       console.error(error);
