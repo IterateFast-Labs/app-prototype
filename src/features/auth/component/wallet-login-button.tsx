@@ -30,8 +30,6 @@ export function WalletLoginButton() {
       }
     }
 
-    let canRedirect: boolean = false;
-
     try {
       const wallet = await connect({
         client: thirdwebClient,
@@ -74,10 +72,6 @@ export function WalletLoginButton() {
         signature,
         walletAddress: account.address as `0x${string}`,
       });
-
-      if (accessToken) {
-        canRedirect = true;
-      }
 
       setAccessToken(accessToken);
 
