@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getCookie } from 'typescript-cookie';
 
 import { useTokenStore } from '@/states/token-store';
 
@@ -12,8 +13,10 @@ export const client = axios.create({
 // Global request and response interceptors
 client.interceptors.request.use((config) => {
   const accessToken = useTokenStore.getState().accessToken;
+  const locale = getCookie('NEXT_LOCALE') || 'en';
 
   config.headers.Authorization = `Bearer ${accessToken}`;
+  config.headers['x-lang'] = locale;
 
   return config;
 });
