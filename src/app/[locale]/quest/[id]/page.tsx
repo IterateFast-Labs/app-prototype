@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 
 import { ScreenContainer } from '@/components/layout/screen-layout';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import QuestContent from '@/features/quest/components/quest-content';
 import { useGetQuestDetail } from '@/requests/quest';
 
@@ -20,12 +20,12 @@ export default function QuestDetailPage() {
     return null;
   }
 
-  const { data, isLoading } = useGetQuestDetail(String(questId));
+  const { data } = useGetQuestDetail(String(questId));
 
   return (
     <main>
       <ScreenContainer className="min-h-svh flex flex-col pb-12">
-        <nav className="absolute top-0 left-0 w-full z-10 bg-black/20">
+        <nav className="sticky top-0 left-0 w-full z-10 bg-black/20">
           <Link
             className={buttonVariants({
               variant: 'ghost',
@@ -41,7 +41,7 @@ export default function QuestDetailPage() {
             <span className="sr-only">Back</span>
           </Link>
         </nav>
-        <article className="flex flex-col gap-2">
+        <article className="flex flex-col gap-2 -mt-10">
           <div className="aspect-video bg-gray-200">
             <img
               className="object-cover w-full h-full"
