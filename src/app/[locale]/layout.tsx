@@ -26,7 +26,10 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={cn([fontSans.className, 'min-h-svh antialiased bg-gray-50'])}
+        className={cn([
+          fontSans.className,
+          'h-svh overflow-hidden antialiased bg-gray-50',
+        ])}
       >
         <NextIntlClientProvider messages={messages}>
           <ClientSideProvider>
