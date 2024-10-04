@@ -1,6 +1,8 @@
 'use client';
 
 import { Search } from 'lucide-react';
+import { useLocale } from 'next-intl';
+import Link from 'next/link';
 import { useDeferredValue, useState } from 'react';
 
 import { ScreenContainer } from '@/components/layout/screen-layout';
@@ -9,6 +11,7 @@ import { cn } from '@/lib/utils';
 import { useGetQuests } from '@/requests/quest';
 
 export default function DashboardPage() {
+  const locale = useLocale();
   const [search, setSearch] = useState<string>('');
   const defferedSearch = useDeferredValue(search);
   const { data } = useGetQuests({
@@ -46,10 +49,10 @@ export default function DashboardPage() {
 
           <div className="space-y-6 py-3">
             {data?.list.map((quest) => (
-              <button
+              <Link
+                href={`/${locale}/quests/${quest.id}`}
                 key={quest.id}
-                role="button"
-                className="group relative w-full h-[160px] overflow-hidden rounded-lg shadow-md"
+                className="group block relative w-full h-[160px] overflow-hidden rounded-lg shadow-md"
               >
                 <img
                   loading="lazy"
@@ -66,7 +69,7 @@ export default function DashboardPage() {
                     {quest.title}
                   </h2>
                 </div>
-              </button>
+              </Link>
             ))}
           </div>
         </div>
