@@ -1,7 +1,6 @@
 'use client';
 
 import { Search } from 'lucide-react';
-import Image from 'next/image';
 import { useDeferredValue, useState } from 'react';
 
 import { ScreenContainer } from '@/components/layout/screen-layout';
@@ -45,7 +44,6 @@ export default function DashboardPage() {
             />
           </div>
 
-          {/* <ul>{data?.list.map((quest) => <li>{JSON.stringify(quest)}</li>)}</ul> */}
           <div className="space-y-6 py-3">
             {data?.list.map((quest) => (
               <button
