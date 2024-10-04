@@ -42,9 +42,9 @@ export default function QuestDetailPage() {
           </Link>
         </nav>
         <article className="flex flex-col gap-2 -mt-10">
-          <div className="aspect-video bg-gray-200">
+          <div className="w-full relative aspect-video bg-gray-200">
             <img
-              className="object-cover w-full h-full"
+              className="absolute inset-0 object-cover object-center w-full h-full"
               src={data?.content.image}
               alt={data?.title}
             />

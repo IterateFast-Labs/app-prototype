@@ -4,7 +4,7 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react';
 
 import { cn } from '@/lib/utils';
 
-export const DEFAULT_MAX_HEIGHT = 320;
+export const DEFAULT_MAX_HEIGHT = 200;
 
 export default function QuestContent({
   text,
