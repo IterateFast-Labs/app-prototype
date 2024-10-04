@@ -18,6 +18,11 @@ export default function QuestContent({
 
   useLayoutEffect(() => {
     if (!contentRef.current || !buttonRef.current) return;
+    if (!text) return;
+
+    // 이미 설정된 높이가 있다면 초기화
+    contentRef.current.style.maxHeight = 'none';
+
     // 예상 높이 계산
     const estimatedHeight = contentRef.current.offsetHeight;
 
