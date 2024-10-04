@@ -93,7 +93,7 @@ export function WalletLoginButton() {
       className="w-full"
       onClick={handleConnectWallet}
     >
-      <span className="font-bold">Connect Wallet</span>
+      <span className="font-bold">Sign in</span>
     </Button>
   );
 }
