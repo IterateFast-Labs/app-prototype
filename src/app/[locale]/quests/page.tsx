@@ -25,9 +25,13 @@ export default function DashboardPage() {
       <ScreenContainer className="min-h-svh flex flex-col pb-12">
         <header className="flex flex-col gap-2 py-8 px-4">
           <h1 className="text-xl font-extrabold">Quests</h1>
-          <p className="text-sm text-gray-500">
-            There are {data?.count} Quests listed
-          </p>
+          {data?.count && (
+            <p className="text-sm text-gray-500">
+              There are {data.count > 0 ? data.count : 'no'} Quest
+              {data?.count > 1 ? <span>s</span> : <span></span>}{' '}
+              {search && `with "${search}"`}
+            </p>
+          )}
         </header>
 
         <div className="px-4">
@@ -48,6 +52,13 @@ export default function DashboardPage() {
           </div>
 
           <div className="space-y-6 py-3">
+            {data?.count === 0 && (
+              <div className="py-10">
+                <p className="text-center text-gray-500">
+                  No quests found with the search term "{search}"
+                </p>
+              </div>
+            )}
             {data?.list.map((quest) => (
               <Link
                 href={`/${locale}/quests/${quest.id}`}
