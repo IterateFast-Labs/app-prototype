@@ -16,7 +16,7 @@ export default function Home() {
       <ScreenContainer className="min-h-svh flex flex-col justify-center pb-12">
         <div className="flex flex-col gap-2 space-y-6 py-8">
           <header className="px-4 py-8 flex justify-center">
-            <h1 className="font-extrabold text-2xl">[{t('SERVICE_NAME')}]</h1>
+            <h1 className="font-extrabold text-4xl">DataQuest</h1>
           </header>
 
           <div>
