@@ -42,6 +42,7 @@ export function useGetQuests(params?: QuestListParams) {
     queryKey: ['quest', 'list', accessToken, params],
     queryFn: () => getQuests(params),
     enabled: !!accessToken,
+    staleTime: 1000 * 60 * 3, // 3 minutes
   });
 }
 
