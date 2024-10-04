@@ -193,7 +193,7 @@ export default function ProfileSetup() {
 
                 <ScreenActions>
                   <Link
-                    href={`/${locale}/quests`}
+                    href={`/${locale}/quest`}
                     className={buttonVariants({
                       size: 'lg',
                       className: 'w-full',

@@ -16,7 +16,7 @@ export default function QuestDetailPage() {
   const questId = useParams().id;
 
   if (!questId) {
-    router.push(`/${locale}/quests`);
+    router.push(`/${locale}/quest`);
     return null;
   }
 
@@ -32,7 +32,7 @@ export default function QuestDetailPage() {
               size: 'icon',
               className: 'group rounded-none',
             })}
-            href={`/${locale}/quests`}
+            href={`/${locale}/quest`}
           >
             <ChevronLeft
               size={24}

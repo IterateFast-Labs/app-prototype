@@ -78,7 +78,7 @@ export function WalletLoginButton() {
       if (isSignUp) {
         router.push(`/${locale}/profile-setup`);
       } else {
-        router.push(`/${locale}/quests`);
+        router.push(`/${locale}/quest`);
       }
     } catch (error) {
       // TODO: Handle error

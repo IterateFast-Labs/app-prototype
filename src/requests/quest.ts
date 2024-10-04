@@ -46,7 +46,7 @@ export function useGetQuests(params?: QuestListParams) {
 }
 
 export async function getQuestDetail(id: string) {
-  const { data } = await client.get<Quest>(`/quests/${id}`);
+  const { data } = await client.get<Quest>(`/quest/${id}`);
   return data;
 }
 

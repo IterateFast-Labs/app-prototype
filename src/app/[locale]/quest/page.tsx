@@ -25,7 +25,7 @@ export default function DashboardPage() {
       <ScreenContainer className="min-h-svh flex flex-col pb-12">
         <header className="flex flex-col gap-2 py-8 px-4">
           <h1 className="text-xl font-extrabold">Quests</h1>
-          {data?.count && (
+          {data?.count !== undefined && (
             <p className="text-sm text-gray-500">
               There are {data.count > 0 ? data.count : 'no'} Quest
               {data?.count > 1 ? <span>s</span> : <span></span>}{' '}
@@ -61,7 +61,7 @@ export default function DashboardPage() {
             )}
             {data?.list.map((quest) => (
               <Link
-                href={`/${locale}/quests/${quest.id}`}
+                href={`/${locale}/quest/${quest.id}`}
                 key={quest.id}
                 className="group block relative w-full h-[160px] overflow-hidden rounded-lg shadow-md"
               >
