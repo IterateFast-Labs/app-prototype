@@ -1,11 +1,12 @@
 'use client';
 
-import { LinkIcon } from 'lucide-react';
+import { ChevronLeft, LinkIcon } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 
 import { ScreenContainer } from '@/components/layout/screen-layout';
+import { Button, buttonVariants } from '@/components/ui/button';
 import QuestContent from '@/features/quest/components/quest-content';
 import { useGetQuestDetail } from '@/requests/quest';
 
@@ -24,6 +25,22 @@ export default function QuestDetailPage() {
   return (
     <main>
       <ScreenContainer className="min-h-svh flex flex-col pb-12">
+        <nav className="absolute top-0 left-0 w-full z-10 bg-black/20">
+          <Link
+            className={buttonVariants({
+              variant: 'ghost',
+              size: 'icon',
+              className: 'group rounded-none',
+            })}
+            href={`/${locale}/quests`}
+          >
+            <ChevronLeft
+              size={24}
+              className="text-white group-hover:text-black"
+            />
+            <span className="sr-only">Back</span>
+          </Link>
+        </nav>
         <article className="flex flex-col gap-2">
           <div className="aspect-video bg-gray-200">
             <img
