@@ -7,6 +7,7 @@ import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import { ScreenActions } from '@/components/layout/screen-layout';
 import { Button, buttonVariants } from '@/components/ui/button';
@@ -41,7 +42,7 @@ export default function ProfileSetupForm() {
   const onSubmit = async (formData: UpdateProfileBody) => {
     try {
       await mutateAsync(formData);
-      alert('Profile updated!');
+      toast.success('Profile updated successfully');
       setStep(ProfileSetupStep.Done);
     } catch (error) {
       console.error(error);
@@ -190,7 +191,7 @@ export default function ProfileSetupForm() {
                 <path
                   d="M3.5 43.5L26.5 66.5L89.5 3.5"
                   stroke="black"
-                  stroke-width="8"
+                  strokeWidth="8"
                 />
               </svg>
             </div>

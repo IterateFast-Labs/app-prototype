@@ -63,7 +63,7 @@ export default async function QuestDetailPage({
               <QuestContent text={data?.content.description} />
 
               <ul className="flex items-center gap-3">
-                {data?.content.externals.map((external, index) => (
+                {data?.content.externals.map((external) => (
                   <li key={external.type}>
                     {external.type === 'website' && (
                       <Link

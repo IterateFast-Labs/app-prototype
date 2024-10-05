@@ -1,7 +1,9 @@
 'use client';
 
+import axios from 'axios';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import {
   useConnectModal,
   useConnectedWallets,
@@ -81,6 +83,11 @@ export function WalletLoginButton() {
         router.push(`/${locale}/quest`);
       }
     } catch (error) {
+      if (axios.isAxiosError(error)) {
+        toast.error(error.response?.data.message || error.message);
+        return;
+      }
+
       // TODO: Handle error
       console.error(error);
     }

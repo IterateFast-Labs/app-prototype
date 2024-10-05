@@ -1,7 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-
 import { ImageMarquee } from '@/components/image-marquee';
 import {
   ScreenActions,
@@ -10,7 +8,6 @@ import {
 import { WalletLoginButton } from '@/features/auth/component/wallet-login-button';
 
 export default function Home() {
-  const t = useTranslations();
   return (
     <main>
       <ScreenContainer className="min-h-svh flex flex-col justify-center pb-12">
